@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace GuitarPick.DataLayer.Interfaces
 {
-    interface IOrdersRepository
+    interface IStateRepository
     {
-        List<Orders> Get(string username);
-
-       void SaveOrders(Orders orders);
-
-        Orders Get_Edit(int id);
+        List<USState> GetState();
     }
 }

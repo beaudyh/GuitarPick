@@ -199,24 +199,34 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DataLayer\DataModels\Orders.cs" />
     <Compile Include="DataLayer\DataModels\Product.cs" />
+    <Compile Include="DataLayer\DataModels\USState.cs" />
     <Compile Include="DataLayer\GuitarPickDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuitarPickDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\GuitarPickOrdersDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuitarPickOrdersDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\Interfaces\IOrdersRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IProductRepository.cs" />
+    <Compile Include="DataLayer\Interfaces\IStateRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQProductRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQOrdersRepository.cs" />
+    <Compile Include="DataLayer\Repositories\StateRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrdersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -235,6 +245,11 @@
     <Content Include="DataLayer\GuitarPickDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GuitarPickDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DataLayer\GuitarPickOrdersDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GuitarPickOrdersDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -283,10 +298,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\EditOrder.cshtml" />
+    <Content Include="Views\Orders\AddOrder.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -302,6 +321,11 @@
   <ItemGroup>
     <None Include="DataLayer\GuitarPickDB.dbml.layout">
       <DependentUpon>GuitarPickDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataLayer\GuitarPickOrdersDB.dbml.layout">
+      <DependentUpon>GuitarPickOrdersDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

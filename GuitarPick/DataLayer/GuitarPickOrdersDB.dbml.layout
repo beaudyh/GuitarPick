@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GuitarPickOrdersDB">
+  <DataContextMoniker Name="/GuitarPickOrdersDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9c237bfc-9647-4d06-8b8c-5b599c23aa03" absoluteBounds="2.625, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/GuitarPickOrdersDBDataContext/OrderDO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9660b16-c137-4ca9-a8b9-c2e1c03b8684" absoluteBounds="2.64, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

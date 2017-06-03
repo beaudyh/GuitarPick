@@ -11,7 +11,7 @@ namespace GuitarPick.DataLayer.Repositories
     public class LINQProductRepository : IProductRepository
     {
         private GuitarPickDBDataContext _DataContext = new GuitarPickDBDataContext();
-        public virtual Product Get(int id)
+        public Product Get(int id)
         {
             Product product = null;
             ProductDO productDO = _DataContext.Product_Get(id).SingleOrDefault();
@@ -20,41 +20,42 @@ namespace GuitarPick.DataLayer.Repositories
                 product = new Product();
                 product.ProductID = productDO.ProductID;
                 product.ProductName = productDO.ProductName;
-                product.Picture = productDO.Picture;
+                product.Description = productDO.Description;
                 product.Price = productDO.Price;
             }
             return product;
 
 
         }
-        public virtual List<Product> GetList()
+        public List<Product> GetList()
         {
             List<Product> productList = new List<Product>();
             ISingleResult<ProductDO> productDOs = _DataContext.Product_GetList();
             foreach (var p in productDOs)
             {
                 Product product = new Product();
-                product.ProductID = productDO.ProductID;
-                product.ProductName = productDO.ProductName;
-                product.Picture = productDO.Picture;
-                product.Price = productDO.Price;
+                product.ProductID = p.ProductID;
+                product.ProductName = p.ProductName;
+                product.Description = p.Description;
+                product.Price = p.Price;
                 productList.Add(product);
             }
             return productList;
 
 
         }
-        public virtual void Save(Product product)
+        public void Save(Product product)
         {
             if (product.ProductID == 0)
             {
-                _DataContext.Product_InsertUpdate(null,product.ProductName, product.Picture, product.Price);
+                _DataContext.Product_InsertUpdate(null, product.ProductName, product.Description, product.Price);
             }
             else
             {
-                _DataContext.Product_InsertUpdate(product.ProductID, product.ProductName, product.Picture, product.Price);
+                _DataContext.Product_InsertUpdate(product.ProductID, product.ProductName, product.Description, product.Price);
             }
 
 
         }
     }
+}

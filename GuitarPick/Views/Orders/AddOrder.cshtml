@@ -1,0 +1,42 @@
+﻿@using GuitarPick.DataLayer.DataModels
+@model Orders
+@{
+    ViewBag.Title = "AddOrder";
+}
+
+<h2>Check Out</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.OrderID)
+    <div>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address)
+        @Html.ValidationMessageFor(m => m.Address)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City)
+        @Html.ValidationMessageFor(m => m.City)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.State)
+        @Html.DropDownListFor(m => m.State, new SelectList(Model.States, "code", "name"))
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Zip)
+        @Html.TextBoxFor(m => m.Zip)
+        @Html.ValidationMessageFor(m => m.Zip)
+    </div>
+    <input class="uxSubmit" type="Submit" value="Submit">
+}

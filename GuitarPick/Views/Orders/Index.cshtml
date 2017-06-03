@@ -1,0 +1,31 @@
+﻿@model List<GuitarPick.DataLayer.DataModels.Orders>
+<h2>Order History</h2>
+
+<table>
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total Price</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th></th>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.ProductName</td>
+            <td>@order.Price</td>
+            <td>@order.Qty</td>
+            <td>@order.TotalPrice</td>
+            <td>@order.Address</td>
+            <td>@order.City</td>
+            <td>@order.State</td>
+            <td>@order.Zip</td>
+            <td>@Html.ActionLink("Edit Order", "EditOrder", "Orders", new { @id = order.OrderID }, null)</td>
+        </tr>
+    }
+</table>
+

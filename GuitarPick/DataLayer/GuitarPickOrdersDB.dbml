@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GuitarPick" Class="GuitarPickOrdersDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BEAUDY-LAPTOP;Initial Catalog=GuitarPick;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GuitarPickConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Orders" Member="OrderDOs">
+    <Type Name="OrderDO" Id="ID1">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Orders_Get" Method="Orders_Get">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(100)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Orders_Get_Edit" Method="Orders_Get_Edit">
+    <Parameter Name="OrderID" Parameter="orderID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.Orders_InsertUpdate" Method="Orders_InsertUpdate">
+    <Parameter Name="OrderID" Parameter="orderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ProductName" Parameter="productName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Qty" Parameter="qty" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PaymentType" Parameter="paymentType" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

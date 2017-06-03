@@ -2,16 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GuitarPickDB">
   <DataContextMoniker Name="/GuitarPickDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="d9916d2f-94d2-4311-bdb8-b0f74077a1f4" absoluteBounds="1, 0.5, 2, 1.5785953776041666">
+    <classShape Id="7543e831-7d11-4b03-8045-d2feefdc8678" absoluteBounds="1.375, 1.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/GuitarPickDBDataContext/ProductDO" />
       <nestedChildShapes>
-        <elementListCompartment Id="f1ca806e-2ef8-4c58-9159-5697a711b759" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fdd76cfd-a533-4be5-95c5-180e11825062" absoluteBounds="3.875, 0.5, 2, 3.1170068359375">
-      <DataClassMoniker Name="/GuitarPickDBDataContext/OrderDO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="548c61d5-9cc4-420a-bfbe-3ad9eb95c4ea" absoluteBounds="3.89, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fbaa50fe-f6c7-42bc-8efa-505605bdb945" absoluteBounds="1.3900000000000001, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

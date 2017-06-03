@@ -1,13 +1,14 @@
-﻿using System;
+﻿using GuitarPick.DataLayer.DataModels;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace GuitarPick.DataLayer.DataModels
+namespace GuitarPick.Models
 {
-    public class Orders
+    public class OrdersModel
     {
+        public List<USState> States { get; set; }
         public int OrderID { get; set; }
 
         public string FirstName { get; set; }
@@ -16,7 +17,7 @@ namespace GuitarPick.DataLayer.DataModels
 
         public string username { get; set; }
 
-        public string ProductName {get; set; }
+        public string ProductName { get; set; }
 
         public int Qty { get; set; }
 
@@ -33,6 +34,5 @@ namespace GuitarPick.DataLayer.DataModels
         public string Zip { get; set; }
 
         public string PaymentType { get; set; }
-        public List<USState> States { get; internal set; }
     }
 }
