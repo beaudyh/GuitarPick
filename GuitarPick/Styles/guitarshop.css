@@ -1,0 +1,94 @@
+html{
+    max-width: 960px;
+}	
+h1{
+	background-color: #0969A3;
+	padding: 15px;
+	margin: 0px;
+}
+footer{
+	background-color: #4F92BA;
+	color: #043F63;
+}
+img#logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25%;
+	height: 95px;
+	float: left;
+}
+#Title{
+	text-align: center;
+	font-size: 40px;
+	width:100%;
+	border:35px;
+	padding: 10x;
+	margin: 10px;
+	clear: right;
+}
+span#title1{
+	color: #D3D3D3;
+}
+span#title2{
+	color: red;
+}
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+ul.my-row {
+
+	display: table;
+	width: 100%;
+	text-align: center;
+}
+ul.my-row > li {
+	display: table-cell;
+	border: 1px;
+	border-style: solid;
+	border-color: gray;
+	padding: 10px;
+}
+li{
+	background: #4F92BA;
+}
+a:link, a:visited {
+	color: #043F63;
+}
+a:hover, a:active {
+	color: white;
+}
+.mySlides{
+	width: 100%;
+	max-height: 200px;
+}
+#addProduct{
+    position: fixed;
+    text-align: center;
+}
+span#addProduct::after{
+    content:" ";
+    white-space: pre;
+}
+@media screen and (min-width: 481px){
+img#logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10%;
+	height: 95px;
+	float: left;
+}
+#mySlides{
+	width: 100%;
+}
+#slide {
+	max-width: 500px;
+}
+.mySlides{
+	width: 100%;
+	max-width: 500px;
+	max-height: 600px;
+}
+}

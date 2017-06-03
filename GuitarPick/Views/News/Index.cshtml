@@ -1,0 +1,15 @@
+﻿@model List<GuitarPick.DataLayer.DataModels.News>
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About & News</h2>
+
+@foreach (var news in Model)
+{
+    <div>
+        <h2>@news.Title</h2>
+        <p>@news.Body</p>
+        <p>Keep Rocking! <br />-@news.Author <br />Posted on @news.DatePosted</p>
+    </div>
+}

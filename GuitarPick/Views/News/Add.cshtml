@@ -1,0 +1,31 @@
+﻿@using GuitarPick.DataLayer.DataModels
+@model News
+@{
+    ViewBag.Title = "Add News";
+}
+
+<h2>Add News</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Body)
+        @Html.TextBoxFor(m => m.Body)
+        @Html.ValidationMessageFor(m => m.Body)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Author)
+        @Html.TextBoxFor(m => m.Author)
+        @Html.ValidationMessageFor(m => m.Author)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.DatePosted)
+        @Html.TextBoxFor(m => m.DatePosted)
+        @Html.ValidationMessageFor(m => m.DatePosted)
+    </div>
+    <input class="uxSubmit" type="Submit" value="Submit">
+}

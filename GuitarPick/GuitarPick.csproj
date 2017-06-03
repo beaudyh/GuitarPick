@@ -199,8 +199,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DataLayer\DataModels\News.cs" />
     <Compile Include="DataLayer\DataModels\Orders.cs" />
     <Compile Include="DataLayer\DataModels\Product.cs" />
     <Compile Include="DataLayer\DataModels\USState.cs" />
@@ -209,16 +211,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GuitarPickDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\GuitarPickNewsDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuitarPickNewsDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\GuitarPickOrdersDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuitarPickOrdersDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\Interfaces\INewsRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IOrdersRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IProductRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IStateRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQProductRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQOrdersRepository.cs" />
+    <Compile Include="DataLayer\Repositories\LINQNewsRepository.cs" />
     <Compile Include="DataLayer\Repositories\StateRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -237,6 +246,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\guitarlogo.png" />
+    <Content Include="Images\img1.jpg" />
+    <Content Include="Images\img2.jpg" />
+    <Content Include="Images\img3.jpg" />
+    <Content Include="Images\img4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -252,6 +266,11 @@
       <LastGenOutput>GuitarPickOrdersDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="DataLayer\GuitarPickNewsDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GuitarPickNewsDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -264,6 +283,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\guitarshop.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -303,6 +323,9 @@
     <Content Include="Views\Orders\AddOrder.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Add.cshtml" />
+    <Content Include="Views\Shared\ShopLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -326,6 +349,11 @@
   <ItemGroup>
     <None Include="DataLayer\GuitarPickOrdersDB.dbml.layout">
       <DependentUpon>GuitarPickOrdersDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataLayer\GuitarPickNewsDB.dbml.layout">
+      <DependentUpon>GuitarPickNewsDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

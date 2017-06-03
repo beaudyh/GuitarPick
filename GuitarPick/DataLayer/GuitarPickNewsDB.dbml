@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GuitarPick" Class="GuitarPickNewsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=BEAUDY-LAPTOP;Initial Catalog=GuitarPick;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="GuitarPickConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.News" Member="NewDOs">
+    <Type Name="NewDO" Id="ID1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DatePosted" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.News_GetList" Method="News_GetList">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.News_Insert" Method="News_Insert">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Body" Parameter="body" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Author" Parameter="author" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DatePosted" Parameter="datePosted" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
