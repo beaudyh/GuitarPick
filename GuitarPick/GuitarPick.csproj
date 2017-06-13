@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44347</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -197,15 +197,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="DataLayer\DataModels\Contact.cs" />
     <Compile Include="DataLayer\DataModels\News.cs" />
     <Compile Include="DataLayer\DataModels\Orders.cs" />
     <Compile Include="DataLayer\DataModels\Product.cs" />
     <Compile Include="DataLayer\DataModels\USState.cs" />
+    <Compile Include="DataLayer\GuitarPickContactDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuitarPickContactDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\GuitarPickDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,10 +229,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GuitarPickOrdersDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\Interfaces\IContactRepository.cs" />
     <Compile Include="DataLayer\Interfaces\INewsRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IOrdersRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IProductRepository.cs" />
     <Compile Include="DataLayer\Interfaces\IStateRepository.cs" />
+    <Compile Include="DataLayer\Repositories\LINQConctactRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQProductRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQOrdersRepository.cs" />
     <Compile Include="DataLayer\Repositories\LINQNewsRepository.cs" />
@@ -233,6 +243,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrdersModel.cs" />
@@ -269,6 +280,11 @@
     <Content Include="DataLayer\GuitarPickNewsDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GuitarPickNewsDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DataLayer\GuitarPickContactDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GuitarPickContactDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -326,9 +342,12 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Add.cshtml" />
     <Content Include="Views\Shared\ShopLayout.cshtml" />
+    <Content Include="Views\Contact\Add.cshtml" />
+    <Content Include="Smtp.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -356,6 +375,11 @@
       <DependentUpon>GuitarPickNewsDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="DataLayer\GuitarPickContactDB.dbml.layout">
+      <DependentUpon>GuitarPickContactDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -374,7 +398,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64097</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64097/</IISUrl>
+          <IISUrl>https://localhost:44347/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

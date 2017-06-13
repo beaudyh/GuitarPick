@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace GuitarPick.DataLayer.Interfaces
 {
-    interface IProductRepository
+    interface IContactRepository
     {
-        Product Get(int id);
-        List<Product> GetList();
-        void Save(Product product);
-        Product GetProductName(int id);
+        void Insert(Contact contact);
     }
 }

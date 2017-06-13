@@ -40,6 +40,18 @@ namespace GuitarPick.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AddtoCart(int ProductID)
+        {
+            List<int> cartItems = (List<int>)HttpContext.Session["myCart"];
+            if(cartItems == null)
+            {
+                cartItems = new List<int>();
+            }
+            cartItems.Add(ProductID);
+            HttpContext.Session["myCart"] = cartItems;
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {

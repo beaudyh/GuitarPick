@@ -13,11 +13,6 @@
         @Html.ValidationMessageFor(m => m.Title)
     </div>
     <div>
-        @Html.LabelFor(m => m.Body)
-        @Html.TextBoxFor(m => m.Body)
-        @Html.ValidationMessageFor(m => m.Body)
-    </div>
-    <div>
         @Html.LabelFor(m => m.Author)
         @Html.TextBoxFor(m => m.Author)
         @Html.ValidationMessageFor(m => m.Author)
@@ -26,6 +21,11 @@
         @Html.LabelFor(m => m.DatePosted)
         @Html.TextBoxFor(m => m.DatePosted)
         @Html.ValidationMessageFor(m => m.DatePosted)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Body) <br />
+        @Html.TextAreaFor(m => m.Body)
+        @Html.ValidationMessageFor(m => m.Body)
     </div>
     <input class="uxSubmit" type="Submit" value="Submit">
 }

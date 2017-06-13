@@ -2,27 +2,37 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="~/Styles/guitarshop.css" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title-GuitarPick</title>
     @RenderSection("PageHead", false)
 </head>
 <body>
     <img id="logo" src="~/Images/guitarlogo.png" alt="guitar logo">
-    <h1 id="Title"><strong><span id="title1">Guitar</span><span id="title2">Pick</span></strong></h1>
-    <nav>
+    @Html.Partial("_LoginPartial")
+    <h1 id="Title">
+        <strong><span id="title1">Guitar</span><span id="title2">Pick</span></strong>
+    </h1>
+
+    <nav id="nav" role = "navigation">
         <ul class="my-row">
-            <li style="width: 25%"><a href="http://www.oit.edu">Home</a></li>
-            <li style="width: 25%"><a href="~/Product/Index">Products</a></li>
-            <li style="width: 25%"><a href="~/News/Index">About</a></li>
-            <li style="width: 25%"><a href="http://www.youtube.com">Contact Us</a></li>
-            <li style="width: 25%"><a href="~/Orders/Index">Orders</a></li>
-            <li style="width: 25%"><a href="~/Orders/AddOrder.">Cart</a></li>
+            <li><a href="~/Home/Index">Home</a></li>
+            <li><a href="~/Product/Index">Products</a></li>
+            <li><a href="~/News/Index">About</a></li>
+            <li><a href="~/Contact/Add">Contact Us</a></li>
+            <li><a href="~/Orders/Index">Orders</a></li>
+            <li><a href="~/Orders/AddOrder">Cart</a></li>
         </ul>
     </nav>
     <div>
         @RenderBody()
     </div>
     <footer>
-        <p>&copy; Beaudy.Harrington <br> "The beautiful thing about learning is that no one can take it away from you"<br>&nbsp B.B. King &nbsp &nbsp &nbsp<span id="addProduct"><a href="~/Product/Add"> Add Products</a></span><p>
+        <p>&copy; GuitarPick, INC. <br> "The beautiful thing about learning is that no one can take it away from you"<br>&nbsp B.B. King</p>
+        <nav>
+            <ul>
+                <li><a class="add" href="~/Product/Add">Add Products</a></li>
+                <li><a class="add" href="~/News/Add">Add News Items</a></li>
+            </ul>
+        </nav>
     </footer>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>

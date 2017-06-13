@@ -18,6 +18,7 @@ namespace GuitarPick
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
@@ -55,14 +56,14 @@ namespace GuitarPick
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "308753916204137",
+            //  appSecret: "79423e59db98785d9669cd3c21d4cc01");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "315723978286-2mupnldjug0gfqkfo2oer6q3a0kt36ab.apps.googleusercontent.com",
+                ClientSecret = "Pho7NTFuBV8AMwUxstEx96A0"
+            });
         }
     }
 }

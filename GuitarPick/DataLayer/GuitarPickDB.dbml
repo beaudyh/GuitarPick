@@ -22,4 +22,8 @@
     <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.Product_GetProductName" Method="Product_GetProductName">
+    <Parameter Name="ProductID" Parameter="productID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
 </Database>

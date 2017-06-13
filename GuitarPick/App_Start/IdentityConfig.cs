@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using GuitarPick.Models;
+using System.Net.Mail;
+using MIS442_Store.Models;
 
 namespace GuitarPick
 {
@@ -18,8 +20,13 @@ namespace GuitarPick
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            SmtpClient client = new SmtpClient();
+            MailMessage mm = new MailMessage();
+            mm.IsBodyHtml = true;
+            mm.To.Add(message.Destination);
+            mm.Subject = message.Subject;
+            mm.Body = message.Body;
+            return client.SendMailAsync(mm);
         }
     }
 
@@ -95,7 +102,6 @@ namespace GuitarPick
             : base(userManager, authenticationManager)
         {
         }
-
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
@@ -104,6 +110,17 @@ namespace GuitarPick
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+    }
+    public class ApplicationRoleManager : RoleManager<ApplicationRole>
+    {
+        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> store) : base(store)
+        {
+        }
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
+        {
+            var roleStore = new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>());
+            return new ApplicationRoleManager(roleStore);
         }
     }
 }

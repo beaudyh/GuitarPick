@@ -46,10 +46,15 @@ namespace GuitarPick.Controllers
 
         [HttpGet]
         public ActionResult AddOrder()
-        {
+        { 
             OrdersModel reg = new OrdersModel();
             reg.States = _Repo.GetState();
-            return View(reg);
+            reg.Cart = (List<int>)HttpContext.Session["myCart"];
+            if (reg.Cart == null)
+            {
+                reg.Cart = new List<int>();
+            }
+                return View(reg);
         }
 
         [HttpPost]
@@ -65,7 +70,7 @@ namespace GuitarPick.Controllers
             reg.FirstName = order.FirstName;
             reg.LastName = order.LastName;
             reg.username = User.Identity.Name;
-            reg.ProductName = order.ProductName;
+            reg.ProductName = "Guitar";
             reg.Qty = order.Qty;
             reg.Price = order.Price;
             reg.TotalPrice = order.TotalPrice;

@@ -24,8 +24,6 @@ namespace GuitarPick.DataLayer.Repositories
                 product.Price = productDO.Price;
             }
             return product;
-
-
         }
         public List<Product> GetList()
         {
@@ -41,8 +39,6 @@ namespace GuitarPick.DataLayer.Repositories
                 productList.Add(product);
             }
             return productList;
-
-
         }
         public void Save(Product product)
         {
@@ -54,8 +50,21 @@ namespace GuitarPick.DataLayer.Repositories
             {
                 _DataContext.Product_InsertUpdate(product.ProductID, product.ProductName, product.Description, product.Price);
             }
+        }
 
-
+        public Product GetProductName(int id)
+        {
+            Product product = null;
+            ProductDO productDO = _DataContext.Product_GetProductName(id).SingleOrDefault();
+            if (productDO != null)
+            {
+                product = new Product();
+                product.ProductID = productDO.ProductID;
+                product.ProductName = productDO.ProductName;
+                product.Description = productDO.Description;
+                product.Price = productDO.Price;
+            }
+            return product;
         }
     }
 }

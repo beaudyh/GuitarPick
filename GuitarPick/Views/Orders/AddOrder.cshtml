@@ -1,11 +1,14 @@
-﻿@using GuitarPick.DataLayer.DataModels
-@model Orders
+﻿@using GuitarPick.Models
+@model OrdersModel
 @{
     ViewBag.Title = "AddOrder";
 }
 
 <h2>Check Out</h2>
-
+@foreach(var item in Model.Cart)
+{
+    @item
+}
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(m => m.OrderID)
