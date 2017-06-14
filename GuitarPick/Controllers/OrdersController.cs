@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace GuitarPick.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private IOrdersRepository _Repos;
@@ -23,7 +24,7 @@ namespace GuitarPick.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(_Repos.Get("Test").Where(p => p.username == User.Identity.Name).ToList<Orders>());
+            return View(_Repos.Get(User.Identity.Name).Where(p => p.username == User.Identity.Name).ToList<Orders>());
         }
 
         [HttpGet]
@@ -75,7 +76,7 @@ namespace GuitarPick.Controllers
             reg.Price = order.Price;
             reg.TotalPrice = order.TotalPrice;
             reg.Address = order.Address;
-            reg.City = reg.City;
+            reg.City = "Klamth Falls";
             reg.State = order.State;
             reg.Zip = order.Zip;
 

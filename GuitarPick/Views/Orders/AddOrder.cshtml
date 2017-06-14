@@ -13,6 +13,11 @@
 {
     @Html.HiddenFor(m => m.OrderID)
     <div>
+        @Html.LabelFor(m => m.Qty)
+        @Html.TextBoxFor(m => m.Qty)
+        @Html.ValidationMessageFor(m => m.Qty)
+    </div>
+    <div>
         @Html.LabelFor(m => m.FirstName)
         @Html.TextBoxFor(m => m.FirstName)
         @Html.ValidationMessageFor(m => m.FirstName)

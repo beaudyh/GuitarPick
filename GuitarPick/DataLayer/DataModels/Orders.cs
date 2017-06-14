@@ -16,6 +16,7 @@ namespace GuitarPick.DataLayer.DataModels
         public string LastName { get; set; }
         public string username { get; set; }
         public string ProductName {get; set; }
+        [Required(ErrorMessage ="How many do you want?")]
         public int Qty { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }

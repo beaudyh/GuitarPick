@@ -61,8 +61,8 @@ namespace GuitarPick
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "315723978286-2mupnldjug0gfqkfo2oer6q3a0kt36ab.apps.googleusercontent.com",
-                ClientSecret = "Pho7NTFuBV8AMwUxstEx96A0"
+                ClientId = "349969513782-pmk5o5hmrveasu8kfat1gpkb69kp580d.apps.googleusercontent.com",
+                ClientSecret = "SyNET9uH4yC-LZKmYrOcfSVp"
             });
         }
     }

@@ -69,7 +69,7 @@ add::after{
     }
         #nav > ul > li
         {
-            width: 16%;
+            width: 16.67%;
         }
     #nav li ul
     {
@@ -97,6 +97,28 @@ a[href="javascript:document.getElementById('logoutForm').submit()"]{
 a[title="Manage"]{
     float: right;
 }
+#Qty{
+    width: 20px;
+}
+#FirstName{
+    width: 100px;
+}
+#LastName{
+     width: 100px;
+}
+#Zip{
+    width: 90px;
+}
+#Price{
+    width: 75px;
+}
+#Description{
+    width: 350px;
+}
+#Body{
+    width: 200px;
+	margin-bottom: 5px;
+}
 @media screen and (min-width: 481px){
     img#logo{
 	    position: absolute;
@@ -119,13 +141,8 @@ a[title="Manage"]{
         display: block;
         margin: 0 auto;
     }
-ul#myrow {
-	padding: 0px;
-	margin: 0px;
-    width: 16%;
-}
 ul.my-row {
-
+    padding: 0px;
 	display: table;
 	width: 100%;
 	text-align: center;
@@ -158,6 +175,28 @@ a[title="Manage"]{
 }
 #registerLink{
     float: right;
+}
+#Qty{
+    width: 20px;
+}
+#FirstName{
+    width: 100px;
+}
+#LastName{
+     width: 100px;
+}
+#Zip{
+    width: 90px;
+}
+#Price{
+    width: 75px;
+}
+#Description{
+    width: 350px;
+}
+#Body{
+    width: 200px;
+	margin-bottom: 5px;
 }
 }
 

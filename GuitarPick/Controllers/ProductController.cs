@@ -22,13 +22,13 @@ namespace GuitarPick.Controllers
         {
             return View(_Repos.GetList());
         }
-
+        [Authorize]
         [HttpGet]
         public ActionResult Add()
         {
             return View(new Product());
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult Add(Product product)
         {
@@ -39,7 +39,7 @@ namespace GuitarPick.Controllers
             _Repos.Save(product);
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public ActionResult AddtoCart(int ProductID)
         {
             List<int> cartItems = (List<int>)HttpContext.Session["myCart"];
