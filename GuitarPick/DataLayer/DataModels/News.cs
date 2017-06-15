@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace GuitarPick.DataLayer.DataModels
         [Required(ErrorMessage = "We want to know who wrote this story")]
         public string Author { get; set; }
         [Required(ErrorMessage = "We need to know when the story was publish")]
+        [DisplayName("Date Posted")]
         public DateTime DatePosted { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,10 @@ namespace GuitarPick.DataLayer.DataModels
         public List<int> Cart { get; set; }
         public int OrderID { get; set; }
         [Required(ErrorMessage ="Enter the first name of who is recieving the package")]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Enter the last name of who is recieving the package")]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
         public string username { get; set; }
         public string ProductName {get; set; }

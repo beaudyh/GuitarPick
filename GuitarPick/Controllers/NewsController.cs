@@ -9,7 +9,6 @@ using System.Web.Mvc;
 
 namespace GuitarPick.Controllers
 {
-    [Authorize]
     public class NewsController : Controller
     {
         private INewsRepository _Repos;
@@ -26,10 +25,12 @@ namespace GuitarPick.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Add()
         {
             return View(new News());
         }
+        [Authorize]
         [HttpPost]
         public ActionResult Add(News news)
         {
